@@ -86,11 +86,11 @@ WSGI_APPLICATION = 'root.wsgi.application'
 
 PG_DB = {
     'ENGINE': 'django.db.backends.postgresql',
-    'NAME': env('PG_NAME'),
-    'USER': env('PG_USER'),
-    'PASSWORD': env('PG_PASS'),
-    'HOST': env('PG_HOST'),
-    'PORT': env('PG_PORT'),
+    'NAME': env('POSTGRES_DB_NAME'),
+    'USER': env('POSTGRES_USER'),
+    'PASSWORD': env('POSTGRES_PASS'),
+    'HOST': env('POSTGRES_HOST'),
+    'PORT': env('POSTGRES_PORT'),
 }
 
 # SQLITE_DB = {
