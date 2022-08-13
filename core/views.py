@@ -4,9 +4,14 @@ from django.shortcuts import render
 
 
 def index(request):
-    tasks = request.user.task_set.all()
+    try:
+        tasks = request.user.task_set.all()
+        user = request.user
+    except:
+        tasks = []
+        user = None
     data = {
         'tasks': tasks,
-        'user': request.user,
+        'user': user,
     }
     return render(request, 'core/index.html', context=data)
