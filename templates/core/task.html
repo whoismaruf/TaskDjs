@@ -1,0 +1,32 @@
+
+    {% if task.completed %}
+        <div class="col-xs-12 col-sm-12 col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card">
+            <div class="card-header bg-success text-light">
+                <div class="d-flex justify-content-between">
+                <div>{{ task.name }}</div>
+                <div>⌚ {{ task.updated_at|date:"M d" }}</div>
+                </div>
+            </div>
+            <div class="card-body" style="background-color:#acfaaf">
+                <p>{{ task.description }}</p>
+            </div>
+            <button type="button" class="btn btn-primary text-light" style="border-radius:0; width: 1/2vw;">Mark as done</button>
+            </div>
+        </div>
+    {% else %}
+        <div class="col-xs-12 col-sm-12 col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card">
+            <div class="card-header bg-danger text-light">
+                <div class="d-flex justify-content-between">
+                <div>{{ task.name }}</div>
+                <div>⌚ {{ task.updated_at|date:"M d" }}</div>
+                </div>
+            </div>
+            <div class="card-body" style="background-color:#fab4c0">
+                <p>{{ task.description }}</p>
+            </div>
+            <button type="button" class="btn btn-primary text-light" style="border-radius:0">Mark as done</button>
+            </div>
+        </div>
+    {% endif %}

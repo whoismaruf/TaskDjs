@@ -1,26 +1,12 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  </head>
-  <body>
-    <h1 class="text-center mt-5 mb-5">Hello, {% if user %} {{user.first_name}} {% else %} <span>user</span> {% endif %}!</h1>
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+  <div class="row mx-5 my-5 gy-3">
     {% for task in tasks %}
-      <div class="text-center">
-        {% if task.completed %}
-          <span class="text-success">
-            <strong>{{ task.name }}</strong>
-          </span>
-        {% else %}
-          <span class="text-danger">
-            <strong>{{ task.name }}</strong>
-          </span>
-        {% endif %}
-      </div>
+      {% include 'core/task.html' %}
     {% endfor %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-  </body>
-</html>
+  </div>
+
+{% endblock content %}
